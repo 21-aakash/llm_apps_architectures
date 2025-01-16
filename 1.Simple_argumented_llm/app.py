@@ -41,7 +41,7 @@ prompt=ChatPromptTemplate.from_template(
 def create_vector_embedding():
     if "vectors" not in st.session_state:
         st.session_state.embeddings=OllamaEmbeddings(model = "mxbai-embed-large")
-        st.session_state.loader = st.session_state.loader = CSVLoader(file_path='Preprocessed_Alarm.csv')
+        st.session_state.loader = CSVLoader(file_path='')
         st.session_state.docs=st.session_state.loader.load() ## Document Loading
         st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
         st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:50])
